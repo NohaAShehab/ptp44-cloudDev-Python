@@ -5,7 +5,7 @@
     accept different datatypes
     no indices
 """
-
+myss = set()
 mys = {"Ahmed", "Zeinab", "iti", 3234, "Ahmed", "Mohamed", "Mohamed",
        "Mohamed", 3.12}
 
