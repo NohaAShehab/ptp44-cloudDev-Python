@@ -35,11 +35,36 @@ import module_packages
 # from module_packages import coursename
 
 x  = 10
+""" import module from pacakge """
+
+# import cloud44.inputs
+#
+# print(cloud44.inputs.ask_for_int("please enter salary"))
 
 
 
+# import cloud44.inputs as ask_int
+#
+# print(ask_int.ask_for_int("please enter salary"))
 
 
+"""import part of module from package"""
+# from cloud44.inputs import ask_for_int
+# print(ask_for_int('please enter salary'))
 
+
+""" import from iti """
+
+# import iti # import package
+#
+# iti.helloword()  # calling the function using pkgname
+#
+
+""" """
+from iti import helloword
+helloword()
+
+from iti import sayhi
+sayhi("jkdh")
 
 
