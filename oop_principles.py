@@ -1,4 +1,3 @@
-
 """
 
     OOP programming paradigm --> used to generate architecture can be used later
@@ -72,7 +71,6 @@
 # emp2.email = '<EMAIL>'
 
 
-
 """ customize object creation """
 
 # class Employee:
@@ -103,7 +101,6 @@
 # emp2= Employee()
 
 
-
 """3rd scenario"""
 # class Employee:
 #     def __init__(self, name, email, salary):
@@ -116,7 +113,6 @@
 # print("emp1 -> ",emp)
 #
 # emp2= Employee("Ali", "ali@gmail.com", 7678564)
-
 
 
 """4th scenario"""
@@ -135,7 +131,6 @@
 # emp2 =Employee("Ahmed", "ahmed@gmail.com", 87454)
 # print(emp2.salary)
 #
-
 
 
 """ multiple constructors ??? """
@@ -175,10 +170,6 @@
 #
 # emp2 = Employee("test", "test", "test")
 # emp2.printEmployee()
-
-
-
-
 
 
 """ define property in the class represents no of objects taken from class """
@@ -249,93 +240,65 @@
 # print(Employee.count)
 
 """ what is behind the class method """
+# class Employee:
+#     count = 0  # class variable
+#     def __init__(self, name, email, salary):
+#         self.name =name
+#         self.email =email
+#         self.salary = salary
+#         self.__class__.count +=1
+#
+#     @classmethod
+#     def printEmpCount(cls):
+#         print(cls, cls.count)
+#
+#
+#     # def createobject(self):
+#     #     return  Employee("default","default",0)
+#
+#     ## define behaviour cannot be done without class
+#     """ create employee object with few required properties"""
+#     @classmethod
+#     def create_default_employee(cls):
+#         """ class method is used as object factory """
+#         # return Employee("default","default",0)
+#         return cls("default", "default", 0)
+#
+# Employee.printEmpCount()  # <class '__main__.Employee'>
+#
+# print(Employee.count)
+# Employee.count =10
+#
+#
+# emp2 = Employee.create_default_employee()
+
+
+""" check this scenario """
+
+
 class Employee:
-    count = 0  # class variable
     def __init__(self, name, email, salary):
-        self.name =name
-        self.email =email
+        self.name = name
+        self.email = email
         self.salary = salary
-        self.__class__.count +=1
 
-    @classmethod
-    def printEmpCount(cls):
-        print(cls, cls.count)
-
-
-    # def createobject(self):
-    #     return  Employee("default","default",0)
-
-    ## define behaviour cannot be done without class
-    """ create employee object with few required properties"""
-    @classmethod
-    def create_default_employee(cls):
-        """ class method is used as object factory """
-        # return Employee("default","default",0)
-        return cls("default", "default", 0)
-
-Employee.printEmpCount()  # <class '__main__.Employee'>
-
-print(Employee.count)
-Employee.count =10
-
-
-emp2 = Employee.create_default_employee()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @staticmethod  # this method ---> represent helper function
+    # // doesn't on class or instance
+    def cal_net_salary(salary):
+        print(salary)
+        return salary * .8
+
+
+emp = Employee("Nada", "nada@gmail.com", 9000)
+
+print(Employee.cal_net_salary(387612736))
+print(Employee.cal_net_salary(emp.salary))
+# def cal_net_salary(salary):
+#     return salary * .8
+#
+#
+# print(cal_net_salary(40000))
+#
+# print(cal_net_salary(emp.salary))
 
 
