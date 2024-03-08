@@ -205,25 +205,94 @@
 
 """2nd scenario"""
 """ class variable shared property between all instances from the class """
+# class Employee:
+#     count = 0  # class variable
+#     def __init__(self, name, email, salary):
+#         self.name =name
+#         self.email =email
+#         self.salary = salary
+#         # Employee.count +=1
+#         self.__class__.count +=1
+#
+#
+#
+# print(Employee.count)  # call class variable using className
+#
+#
+# emp=Employee("John","<EMAIL>",2233)
+# print(Employee.count)  # call class variable using className
+# emp2= Employee("John","<EMAIL>", 781236)
+# print(emp.__dict__)
+# print(Employee.count)  # call class variable using className
+#
+
+
+""" class methods """
+
+# class Employee:
+#     count = 0  # class variable
+#     def __init__(self, name, email, salary):
+#         self.name =name
+#         self.email =email
+#         self.salary = salary
+#         self.__class__.count +=1
+#
+#     @classmethod  # decorator --> object from special classes in python
+#     # modify behaviour of function
+#     def printEmpCount(cls):
+#         print(cls)
+#         print(cls.count)
+#
+#
+# Employee.printEmpCount()  # <class '__main__.Employee'>
+#
+# print(Employee.count)
+
+""" what is behind the class method """
 class Employee:
     count = 0  # class variable
     def __init__(self, name, email, salary):
         self.name =name
         self.email =email
         self.salary = salary
-        # Employee.count +=1
         self.__class__.count +=1
 
+    @classmethod
+    def printEmpCount(cls):
+        print(cls, cls.count)
 
 
-print(Employee.count)  # call class variable using className
+    # def createobject(self):
+    #     return  Employee("default","default",0)
+
+    ## define behaviour cannot be done without class
+    """ create employee object with few required properties"""
+    @classmethod
+    def create_default_employee(cls):
+        """ class method is used as object factory """
+        # return Employee("default","default",0)
+        return cls("default", "default", 0)
+
+Employee.printEmpCount()  # <class '__main__.Employee'>
+
+print(Employee.count)
+Employee.count =10
 
 
-emp=Employee("John","<EMAIL>",2233)
-print(Employee.count)  # call class variable using className
-emp2= Employee("John","<EMAIL>", 781236)
-print(emp.__dict__)
-print(Employee.count)  # call class variable using className
+emp2 = Employee.create_default_employee()
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
